@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple login form</title>
+    <title>Legal Acts</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <style>
@@ -132,16 +132,14 @@
   </head>
   <body>
     <div class="main-block">
-      <h1>Login</h1>
+      <h1>Search your case</h1>
       <form action="login.php" method="get">
         <hr>
-        <label id="icon" for="user"><i class="fas fa-user"></i></label>
-        <input type="text" name="user" id="user" placeholder="Username" required/>
-        <label id="icon" for="pass"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="pass" id="pass" placeholder="Password" required/>
+        <label id="icon" for="hash"><i class="fas fa-user"></i></label>
+        <input type="text" name="hash" id="hash" placeholder="Hashcode" required/>
         <hr>
         <div class="btn-block">
-          <p>By clicking Register, you agree on our <a href="https://www.w3docs.com/privacy-policy">Privacy Policy for W3Docs</a>.</p>
+          <p>By clicking Submit, you agree on our <a href="https://www.w3docs.com/privacy-policy">Privacy Policy for W3Docs</a>.</p>
           <button type="submit" href="/">Submit</button>
         </div>
       </form>

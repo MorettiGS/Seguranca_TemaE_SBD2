@@ -4,9 +4,8 @@ ini_set("display_erros", 1);
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $link = mysqli_connect('relational.fit.cvut.cz', 'guest', 'relational', 'legalActs');
-    $user = $_GET['user'];
-    $pass = $_GET['pass'];
-    $query = "SELECT * FROM `legalacts`";
+    $hash = $_GET['hash'];
+    $query = "SELECT * FROM `legalacts` WHERE `hash` = '$hash' OFFSET 0 ROWS FETCH NEXT 15 ROWS ONLY";
     $result = mysqli_query($link, $query);
 }
 
@@ -16,23 +15,38 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 <html>
     <head>
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-        <h2 class="title-resultado">Resultado</h2>
+        <h2 class="title-resultado">Resultados</h2>
     </head>
     <body>
     <table>
         <tr>
-            <th>Usuário</th>
-            <th>Email</th>
+            <th>Caso</th>
+            <th>Tribunal</th>
+            <th>Data de início</th>
+            <th>Data legal</th>
+            <th>Status</th>
+            <th>Juiz</th>
+            <th>Resolução</th>
         </tr>
         <tr>
 
         <?php
-            foreach($result as $userdata){
-                $user = $userdata['username'];
-                $email = $userdata['email'];
+            foreach ($result as $actData) {
+                $case = isset($actData['CaseNumber']) ? $actData['CaseNumber'] : '-';
+                $court = isset($actData['Court']) ? $actData['Court'] : '-';
+                $sdate = isset($actData['StartDate']) ? $actData['StartDate'] : '-';
+                $ldate = isset($actData['LegalDate']) ? $actData['LegalDate'] : '-';
+                $status = isset($actData['Status']) ? $actData['Status'] : '-';
+                $judge = isset($actData['Judge']) ? $actData['Judge'] : '-';
+                $appealResult = isset($actData['ResultOfAppeal']) ? $actData['ResultOfAppeal'] : '-';   
         ?>
-            <td class="table-item"><?=$user?></td>
-            <td class="table-item"><?=$email?></td>
+            <td class="table-item"><?=$case?></td>
+            <td class="table-item"><?=$court?></td>
+            <td class="table-item"><?=$sdate?></td>
+            <td class="table-item"><?=$ldate?></td>
+            <td class="table-item"><?=$status?></td>
+            <td class="table-item"><?=$judge?></td>
+            <td class="table-item"><?=$appealResult?></td>
         </tr>
         <?php } ?>
         </table>
