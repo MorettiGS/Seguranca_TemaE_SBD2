@@ -18,6 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         <h2 class="title-resultado">Resultados</h2>
     </head>
     <body>
+    <button type="submit" onclick="redirectToLocalhost()">Back</button>
     <table>
         <tr>
             <th>Caso</th>
@@ -50,6 +51,11 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         </tr>
         <?php } ?>
         </table>
+        <script>
+            function redirectToLocalhost() {
+                window.location.href = 'http://localhost:8080/';
+            }
+        </script>
     </body>
 </html>
 
@@ -92,7 +98,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     }
 
     button {
-      width: 100%;
+      width: 30%;
       padding: 10px 0;
       margin: 10px auto;
       border-radius: 5px; 
