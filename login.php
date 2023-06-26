@@ -3,11 +3,10 @@
 ini_set("display_erros", 1);
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
-    $link = mysqli_connect('127.0.0.1', 'root', '', 'login');
-    $email = $_GET['email'];
+    $link = mysqli_connect('127.0.0.1', 'root', 'Ipgms271902-', 'login');
     $user = $_GET['user'];
     $pass = $_GET['pass'];
-    $query = "SELECT * FROM login_details WHERE email = '$email' AND username = '$user' AND password = '$pass'";
+    $query = "SELECT * FROM `login_details` WHERE username = '$user' AND password = '$pass'";
     $result = mysqli_query($link, $query);
 }
 
@@ -22,16 +21,18 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     <body>
     <table>
         <tr>
-            <th>Email</th>
             <th>Usuário</th>
+            <th>Email</th>
         </tr>
         <tr>
 
         <?php
-            foreach($result as $user){
-                $dataex = $user;
+            foreach($result as $userdata){
+                $user = $userdata['username'];
+                $email = $userdata['email']
         ?>
-            <td class="table-item"><?=$dataex?></td>
+            <td class="table-item"><?=$user?></td>
+            <td class="table-item"><?=$email?></td>
         </tr>
         <?php } ?>
         </table>

@@ -133,10 +133,8 @@
   <body>
     <div class="main-block">
       <h1>Login</h1>
-      <form action="./injectionSQL/login.php" method="get">
+      <form action="login.php" method="get">
         <hr>
-        <label id="icon" for="email"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="email" id="email" placeholder="Email" required/>
         <label id="icon" for="user"><i class="fas fa-user"></i></label>
         <input type="text" name="user" id="user" placeholder="Username" required/>
         <label id="icon" for="pass"><i class="fas fa-unlock-alt"></i></label>

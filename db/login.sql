@@ -11,7 +11,7 @@ USE `login`;
 -- Table structure for table `login_details`
 --
 
-CREATE TABLE `login` (
+CREATE TABLE `login_details` (
   `username` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`email`, `username`, `password`) VALUES
+INSERT INTO `login_details` (`email`, `username`, `password`) VALUES
 ('admin@teste.com', 'admin', 'admin'),
 ('html@teste.com', 'html', 'css'),
 ('php@teste.com', 'php', 'php'),
