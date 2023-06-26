@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     }
 
     .title-resultado{
-        color: #D2691E;
+        color: #26a9e0;
         font-size: 2rem;
     }
 
@@ -87,8 +87,23 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     th {
         height: 50px;
-        background-color: #20B2AA;
+        background-color: #1c87c9;
         color: white;
     }
+
+    button {
+      width: 100%;
+      padding: 10px 0;
+      margin: 10px auto;
+      border-radius: 5px; 
+      border: none;
+      background: #1c87c9; 
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      }
+      button:hover {
+      background: #26a9e0;
+      }
 
 </style>
