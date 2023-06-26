@@ -3,10 +3,10 @@
 ini_set("display_erros", 1);
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
-    $link = mysqli_connect('127.0.0.1', 'root', 'Ipgms271902-', 'login');
+    $link = mysqli_connect('relational.fit.cvut.cz', 'guest', 'relational', 'legalActs');
     $user = $_GET['user'];
     $pass = $_GET['pass'];
-    $query = "SELECT * FROM `login_details` WHERE username = '$user' AND password = '$pass'";
+    $query = "SELECT * FROM `legalacts`";
     $result = mysqli_query($link, $query);
 }
 
@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         <?php
             foreach($result as $userdata){
                 $user = $userdata['username'];
-                $email = $userdata['email']
+                $email = $userdata['email'];
         ?>
             <td class="table-item"><?=$user?></td>
             <td class="table-item"><?=$email?></td>
