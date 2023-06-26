@@ -133,14 +133,14 @@
   <body>
     <div class="main-block">
       <h1>Login</h1>
-      <form action="/">
+      <form action="./injectionSQL/login.php" method="get">
         <hr>
-        <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="name" id="name" placeholder="Email" required/>
-        <label id="icon" for="name"><i class="fas fa-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Name" required/>
-        <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="name" id="name" placeholder="Password" required/>
+        <label id="icon" for="email"><i class="fas fa-envelope"></i></label>
+        <input type="text" name="email" id="email" placeholder="Email" required/>
+        <label id="icon" for="user"><i class="fas fa-user"></i></label>
+        <input type="text" name="user" id="user" placeholder="Username" required/>
+        <label id="icon" for="pass"><i class="fas fa-unlock-alt"></i></label>
+        <input type="password" name="pass" id="pass" placeholder="Password" required/>
         <hr>
         <div class="btn-block">
           <p>By clicking Register, you agree on our <a href="https://www.w3docs.com/privacy-policy">Privacy Policy for W3Docs</a>.</p>
